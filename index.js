@@ -21,6 +21,7 @@ inquirer.prompt([
         name: 'email'
     },
     {
+        type: 'list',
         message: "Enter the team member's role",
         name: 'role',
         choices: ['Manager', 'Engineer', 'Intern']
@@ -29,41 +30,49 @@ inquirer.prompt([
 .then(function({name, id, email, role}) {
     const empRole = "";
     if(role === 'Manager') {
-        createManager();
+        createManager(name, id, email, role);
     } else if(role === 'Engineer') {
-        createEngineer();
+        createEngineer(name, id, email, role);
     } else {
-        createIntern();
+        createIntern(name, id, email, role);
     }
 })
 
-function createManager(name, id, email, role) {
+function createManager(name, id, email) {
     inquirer.prompt([
         {
             message: "What is their office number?",
-            name: "Office number"
+            name: "officeNumber"
         }
     ])
     .then(function({officeNumber, moreEmployees}) {
-        const newManager = new Manager(name, id, email, role, officeNumber);
+        const newManager = new Manager(name, id, email, officeNumber);
         console.log(newManager);
     })
 }
 
-function createEngineer() {
+function createEngineer(name, id, email) {
     inquirer.prompt([
         {
             message: "What is their Github username?",
-            name: "Github"
+            name: "github"
         }
     ])
+    .then(function({github, moreEmployees}) {
+        const newEngineer = new Engineer(name, id, email, github);
+        console.log(newEngineer)
+    })
 }
 
-function createIntern() {
+function createIntern(name, id, email) {
     inquirer.prompt([
         {
             message: "Where did they go to school?",
-            name: "School"
+            name: "school"
         }
     ])
+    .then(function({school, moreEmployees}) {
+        const newIntern = new Intern(name, id, email, school);
+        console.log(newIntern)
+    })
 }
