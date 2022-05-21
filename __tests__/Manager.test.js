@@ -17,9 +17,3 @@ test('getRole() returning manager', () => {
     const man = new Manager('Caleb', 5, 'test@test.com', 10);
     expect(man.getRole()).toBe(fakeRole);
 });
-
-
-
-// extend employee test parameters
-// officeNumber
-// getRole() * to return "Manager"
