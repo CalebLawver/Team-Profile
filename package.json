@@ -1,7 +1,29 @@
 {
   "dependencies": {
     "inquirer": "^8.2.4",
-    "jes": "^0.6.1",
+    "jes": "^0.6.1"
+  },
+  "devDependencies": {
     "jest": "^28.1.0"
-  }
+  },
+  "name": "team-profile",
+  "description": "## User Story * AS A manager * I WANT to generate a webpage that displays my team's basic info * SO THAT I have quick access to their emails and GitHub profiles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CalebLawver/Team-Profile.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CalebLawver/Team-Profile/issues"
+  },
+  "homepage": "https://github.com/CalebLawver/Team-Profile#readme"
 }
